@@ -7,7 +7,7 @@ Todo
 - [ ] Make FAQ Own route
 - [ ] fix pricing
   - [x] section in home page
-  - [ ] text content
+  - [x] text content
   - [ ] auth
 - [ ] remove blog
 - [ ] remove auth

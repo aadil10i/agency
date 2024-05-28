@@ -79,9 +79,9 @@ export function PricingCards({
                   <div className="flex items-end">
                     <div className="flex text-left text-3xl font-semibold leading-6">
                       <span className="mr-2 text-muted-foreground line-through">
-                        ${offer?.prices?.from}
+                        AED{offer?.prices?.from}
                       </span>
-                      <span> ${offer?.prices?.yearly}</span>
+                      <span> AED{offer?.prices?.yearly}</span>
                     </div>
                   </div>
                 </div>
