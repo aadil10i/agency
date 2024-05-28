@@ -46,12 +46,7 @@ export function PricingCards({
         <h2 className="font-heading text-3xl leading-[1.1] md:text-5xl">
           {dict.slogan}
         </h2>
-        <span>One Time Payment</span>
       </div>
-
-      {/* <div>
-        <span className="mb-4">One Time Payment</span>
-      </div> */}
 
       <div className="mx-auto grid max-w-screen-lg gap-5 bg-inherit py-4 md:grid-cols-3 lg:grid-cols-3">
         {pricingData.map(
@@ -84,14 +79,14 @@ export function PricingCards({
                   <div className="flex items-end">
                     <div className="flex text-left text-3xl font-semibold leading-6">
                       <span className="mr-2 text-muted-foreground line-through">
-                        {offer?.prices?.from}
+                        ${offer?.prices?.from}
                       </span>
                       <span> ${offer?.prices?.yearly}</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-left text-sm text-muted-foreground">
-                  {`$${offer?.prices?.yearly} ${dict.annual_info}`}
+                  {`${dict.annual_info}`}
                 </div>
               </div>
 

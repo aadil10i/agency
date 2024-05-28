@@ -7,7 +7,7 @@ interface SubscriptionPlanTranslation {
   benefits: string[];
   limitations: string[];
   prices: {
-    from: number;
+    from?: number;
     monthly: number;
     yearly: number;
   };
