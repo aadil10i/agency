@@ -1,7 +1,6 @@
 import { getCurrentUser } from "@saasfly/auth";
 
 import { PricingCards } from "~/components/price/pricing-cards";
-import { PricingFaq } from "~/components/price/pricing-faq";
 import type { Locale } from "~/config/i18n-config";
 import { getDictionary } from "~/lib/get-dictionary";
 import { trpc } from "~/trpc/server";
@@ -34,8 +33,6 @@ export default async function PricingPage({
         dict={dict.price}
         params={{ lang }}
       />
-      <hr className="container" />
-      <PricingFaq params={{ lang }} dict={dict.price} />
     </div>
   );
 }

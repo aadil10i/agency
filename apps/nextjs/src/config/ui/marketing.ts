@@ -21,8 +21,8 @@ export const getMarketingConfig = async ({
         href: `/pricing`,
       },
       {
-        title: dict.marketing.main_nav_blog,
-        href: `/blog`,
+        title: dict.marketing.main_nav_faq,
+        href: `/faq`,
       },
     ],
   };

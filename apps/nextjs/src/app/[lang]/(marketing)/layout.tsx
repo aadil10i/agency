@@ -2,7 +2,6 @@ import { Suspense } from "react";
 
 import { getCurrentUser } from "@saasfly/auth";
 
-import { ModalProvider } from "~/components/modal-provider";
 import { NavBar } from "~/components/navbar";
 import { SiteFooter } from "~/components/site-footer";
 import type { Locale } from "~/config/i18n-config";
@@ -30,11 +29,8 @@ export default async function MarketingLayout({
           params={{ lang: `${lang}` }}
           scroll={true}
           user={user}
-          marketing={dict.marketing}
-          dropdown={dict.dropdown}
         />
       </Suspense>
-      <ModalProvider dict={dict.login} />
       <main className="flex-1">{children}</main>
       <SiteFooter
         className="border-t border-border"
