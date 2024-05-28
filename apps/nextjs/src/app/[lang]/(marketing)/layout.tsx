@@ -6,7 +6,6 @@ import { NavBar } from "~/components/navbar";
 import { SiteFooter } from "~/components/site-footer";
 import type { Locale } from "~/config/i18n-config";
 import { getMarketingConfig } from "~/config/ui/marketing";
-import { getDictionary } from "~/lib/get-dictionary";
 
 export default async function MarketingLayout({
   children,
@@ -17,7 +16,6 @@ export default async function MarketingLayout({
     lang: Locale;
   };
 }) {
-  const dict = await getDictionary(lang);
   const user = await getCurrentUser();
   return (
     <div className="flex min-h-screen flex-col">
@@ -32,11 +30,7 @@ export default async function MarketingLayout({
         />
       </Suspense>
       <main className="flex-1">{children}</main>
-      <SiteFooter
-        className="border-t border-border"
-        params={{ lang: `${lang}` }}
-        dict={dict.common}
-      />
+      <SiteFooter className="border-t border-border" />
     </div>
   );
 }
