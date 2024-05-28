@@ -1,26 +1,25 @@
-// @ts-ignore
+// @ts-expect-error
 // @ts-nocheck
 "use client";
 
 import {
-  JSXElementConstructor,
-  Key,
-  PromiseLikeOfReactNode,
-  ReactElement,
-  ReactNode,
-  useState,
+  type JSXElementConstructor,
+  type Key,
+  type PromiseLikeOfReactNode,
+  type ReactElement,
+  type ReactNode,
 } from "react";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
 import { Button, buttonVariants } from "@saasfly/ui/button";
 import * as Icons from "@saasfly/ui/icons";
-import { Switch } from "@saasfly/ui/switch";
 
 import { BillingFormButton } from "~/components/price/billing-form-button";
 import { priceDataMap } from "~/config/price/price-data";
 import { useSigninModal } from "~/hooks/use-signin-modal";
-import { UserSubscriptionPlan } from "~/types";
+import type { UserSubscriptionPlan } from "~/types";
+import { SignInModal } from "../sign-in-modal";
 
 interface PricingCardsProps {
   userId?: string;
@@ -37,13 +36,7 @@ export function PricingCards({
   dict,
   params: { lang },
 }: PricingCardsProps) {
-  const isYearlyDefault = true;
-  const [isYearly, setIsYearly] = useState<boolean>(isYearlyDefault);
-  const signInModal = useSigninModal();
   const pricingData = priceDataMap[lang];
-  const toggleBilling = () => {
-    setIsYearly(!isYearly);
-  };
   return (
     <section className="container flex flex-col items-center text-center">
       <div className="mx-auto mb-10 flex w-full flex-col gap-5">
@@ -53,20 +46,14 @@ export function PricingCards({
         <h2 className="font-heading text-3xl leading-[1.1] md:text-5xl">
           {dict.slogan}
         </h2>
+        <span>One Time Payment</span>
       </div>
 
-      <div className="mb-4 flex items-center gap-5">
-        <span>{dict.monthly_bill}</span>
-        <Switch
-          checked={isYearly}
-          onCheckedChange={toggleBilling}
-          role="switch"
-          aria-label="switch-year"
-        />
-        <span>{dict.annual_bill}</span>
-      </div>
+      {/* <div>
+        <span className="mb-4">One Time Payment</span>
+      </div> */}
 
-      <div className="mx-auto grid max-w-screen-lg gap-5 bg-inherit py-5 md:grid-cols-3 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-screen-lg gap-5 bg-inherit py-4 md:grid-cols-3 lg:grid-cols-3">
         {pricingData.map(
           (offer: {
             title:
@@ -78,15 +65,6 @@ export function PricingCards({
               | null
               | undefined;
             prices: {
-              monthly:
-                | string
-                | number
-                | boolean
-                | ReactElement<any, string | JSXElementConstructor<any>>
-                | Iterable<ReactNode>
-                | PromiseLikeOfReactNode
-                | null
-                | undefined;
               yearly: number;
             };
             benefits: any[];
@@ -105,29 +83,16 @@ export function PricingCards({
                 <div className="flex flex-row">
                   <div className="flex items-end">
                     <div className="flex text-left text-3xl font-semibold leading-6">
-                      {isYearly && offer?.prices?.monthly > 0 ? (
-                        <>
-                          <span className="mr-2 text-muted-foreground line-through">
-                            ${offer?.prices?.monthly}
-                          </span>
-                          <span>${offer?.prices?.yearly / 12}</span>
-                        </>
-                      ) : (
-                        `$${offer?.prices?.monthly}`
-                      )}
-                    </div>
-                    <div className="-mb-1 ml-2 text-left text-sm font-medium">
-                      <div>{dict.mo}</div>
+                      <span className="mr-2 text-muted-foreground line-through">
+                        {offer?.prices?.from}
+                      </span>
+                      <span> ${offer?.prices?.yearly}</span>
                     </div>
                   </div>
                 </div>
-                {offer.prices.monthly > 0 ? (
-                  <div className="text-left text-sm text-muted-foreground">
-                    {isYearly
-                      ? `$${offer?.prices?.yearly} ${dict.annual_info}`
-                      : `${dict.monthly_info}`}
-                  </div>
-                ) : null}
+                <div className="text-left text-sm text-muted-foreground">
+                  {`$${offer?.prices?.yearly} ${dict.annual_info}`}
+                </div>
               </div>
 
               <div className="flex h-full flex-col justify-between gap-16 p-6">
@@ -164,14 +129,14 @@ export function PricingCards({
                     </Link>
                   ) : (
                     <BillingFormButton
-                      year={isYearly}
+                      year={true}
                       offer={offer}
                       subscriptionPlan={subscriptionPlan}
                       dict={dict}
                     />
                   )
                 ) : (
-                  <Button onClick={signInModal.onOpen}>{dict.signup}</Button>
+                  <Button onClick={SignInModal.onOpen}>{dict.signup}</Button>
                 )}
               </div>
             </div>
