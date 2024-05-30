@@ -14,6 +14,6 @@ Todo
 - [x] remove blog
 - [x] remove auth
 - [x] remove language
-- [x] remove dicts
+- [ ] remove dicts
 - [ ] remove unwanted components
 - [ ] call us redirect / calend.ly or cal.com
