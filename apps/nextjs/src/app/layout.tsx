@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "~/styles/globals.css";
 
+import { Suspense } from "react";
 import { NextDevtoolsProvider } from "@next-devtools/core";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -10,10 +11,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cn } from "@saasfly/ui";
 import { Toaster } from "@saasfly/ui/toaster";
 
+import { NavBar } from "~/components/navbar";
+import { SiteFooter } from "~/components/site-footer";
 import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
-import { i18n } from "~/config/i18n-config";
 import { siteConfig } from "~/config/site";
+import { getMarketingConfig } from "~/config/ui/marketing";
 
 // import { Suspense } from "react";
 // import { PostHogPageview } from "~/config/providers";
@@ -28,10 +31,6 @@ const fontHeading = localFont({
   src: "../styles/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
 });
-
-export function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
 
 export const metadata = {
   title: {
@@ -50,10 +49,10 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "saasfly",
+      name: "Hata Media Group LLC",
     },
   ],
-  creator: "Saasfly",
+  creator: "Hata Media Group LLC",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -71,17 +70,17 @@ export const metadata = {
   // manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Fetch marketing config without lang parameter
+  const marketingConfig = await getMarketingConfig();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      {/*<Suspense>*/}
-      {/*  <PostHogPageview />*/}
-      {/*</Suspense>*/}
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -94,11 +93,17 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
         >
-          <NextDevtoolsProvider>{children}</NextDevtoolsProvider>
-          <Analytics />
-          <SpeedInsights />
-          <Toaster />
-          <TailwindIndicator />
+          <Suspense fallback="...">
+            <NavBar items={marketingConfig.mainNav} scroll={true} />
+          </Suspense>
+          <main className="flex-1">{children}</main>
+          <SiteFooter className="border-t border-border" />
+          <NextDevtoolsProvider>
+            <Analytics />
+            <SpeedInsights />
+            <Toaster />
+            <TailwindIndicator />
+          </NextDevtoolsProvider>
         </ThemeProvider>
       </body>
     </html>

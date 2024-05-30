@@ -13,12 +13,9 @@ import type { MainNavItem } from "~/types";
 interface MainNavProps {
   items?: MainNavItem[];
   children?: React.ReactNode;
-  params: {
-    lang: string;
-  };
 }
 
-export function MainNav({ items, children, params: { lang } }: MainNavProps) {
+export function MainNav({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment();
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
   const toggleMenu = () => {
@@ -29,7 +26,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
   };
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href={`/${lang}`} className="hidden items-center space-x-2 md:flex">
+      <Link href={`/`} className="hidden items-center space-x-2 md:flex">
         <div>
           <Icons.Nextjs className="mx-auto h-6 w-6" />
         </div>
@@ -39,7 +36,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
           {items?.map((item, index) => (
             <Link
               key={index}
-              href={item.disabled ? "#" : `/${lang}${item.href}`}
+              href={item.disabled ? "#" : `/{item.href}`}
               className={cn(
                 "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
                 item.href.startsWith(`/${segment}`)
@@ -53,13 +50,6 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
           ))}
         </nav>
       ) : null}
-      <button
-        className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
-      >
-        {showMobileMenu ? <Icons.Close /> : <Icons.Logo />}
-        <span className="font-bold">Menu</span>
-      </button>
       {showMobileMenu && items && (
         <MobileNav items={items} menuItemClick={handleMenuItemClick}>
           {children}

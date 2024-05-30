@@ -11,9 +11,9 @@ Todo
   - [x] section in home page
   - [x] text content
   - [ ] auth
-- [ ] remove blog
-- [ ] remove auth
-- [ ] remove language
-- [ ] remove dicts
+- [x] remove blog
+- [x] remove auth
+- [x] remove language
+- [x] remove dicts
 - [ ] remove unwanted components
 - [ ] call us redirect / calend.ly or cal.com

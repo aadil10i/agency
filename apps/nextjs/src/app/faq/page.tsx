@@ -19,7 +19,6 @@ export default async function FaqPage({
 
   return (
     <div className="flex w-full flex-col gap-16 py-8 md:py-8">
-      <hr className="container" />
       <PricingFaq params={{ lang }} dict={dict.price} />
     </div>
   );

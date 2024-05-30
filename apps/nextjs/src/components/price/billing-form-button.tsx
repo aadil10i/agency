@@ -12,13 +12,11 @@ interface BillingFormButtonProps {
   offer: SubscriptionPlan;
   subscriptionPlan: UserSubscriptionPlan;
   year: boolean;
-  dict: Record<string, string>;
 }
 
 export function BillingFormButton({
   year,
   offer,
-  dict,
   subscriptionPlan,
 }: BillingFormButtonProps) {
   const [isPending, startTransition] = useTransition();
@@ -48,9 +46,7 @@ export function BillingFormButton({
         </>
       ) : (
         <>
-          {subscriptionPlan.stripePriceId
-            ? dict.manage_subscription
-            : dict.upgrade}
+          {subscriptionPlan.stripePriceId ? "Manage Subscription" : "upgrade"}
         </>
       )}
     </Button>

@@ -1,29 +1,24 @@
-import type { Locale } from "~/config/i18n-config";
-import { getDictionary } from "~/lib/get-dictionary";
 import type { MarketingConfig } from "~/types";
 
-export const getMarketingConfig = async ({
-  params: { lang },
-}: {
-  params: {
-    lang: Locale;
-  };
-}): Promise<MarketingConfig> => {
-  const dict = await getDictionary(lang);
+// Since you don't need translations, directly define your navigation items
+const mainNavItems = [
+  {
+    title: "Features", // Replace with your actual English title
+    href: `/#features`,
+  },
+  {
+    title: "Pricing", // Replace with your actual English title
+    href: `/pricing`,
+  },
+  {
+    title: "FAQ", // Replace with your actual English title
+    href: `/faq`,
+  },
+];
+
+export const getMarketingConfig = async (): Promise<MarketingConfig> => {
+  // You no longer need to fetch a dictionary
   return {
-    mainNav: [
-      {
-        title: dict.marketing.main_nav_features,
-        href: `/#features`,
-      },
-      {
-        title: dict.marketing.main_nav_pricing,
-        href: `/pricing`,
-      },
-      {
-        title: dict.marketing.main_nav_faq,
-        href: `/faq`,
-      },
-    ],
+    mainNav: mainNavItems,
   };
 };

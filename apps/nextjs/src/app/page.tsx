@@ -1,22 +1,17 @@
+import Link from "next/link";
+
 import { Button } from "@saasfly/ui/button";
 
 import { InfiniteMovingCardss } from "~/app/infiniteMovingCards";
 import { HoverEffects } from "~/components/card-hover-effect";
 import { PricingCards } from "~/components/price/pricing-cards";
-import { PricingFaq } from "~/components/price/pricing-faq";
-// import { Globes } from "~/components/globe";
+// import { PricingFaq } from "~/components/price/pricing-faq";
 import TextGenerateEffects from "~/components/textGenerateEffect";
-import type { Locale } from "~/config/i18n-config";
-import { getDictionary } from "~/lib/get-dictionary";
 
-export default async function IndexPage({
-  params: { lang },
-}: {
-  params: {
-    lang: Locale;
-  };
-}) {
-  const dict = await getDictionary(lang);
+// import { trpc } from "~/trpc/server";
+
+export default function IndexPage() {
+  // const subscriptionPlan = await trpc.stripe.userPlans.query();
 
   return (
     <>
@@ -30,7 +25,9 @@ export default async function IndexPage({
           </h1>
           <TextGenerateEffects />
 
-          <Button>Book a call</Button>
+          <Button>
+            <Link href={"/en/contact"}>Contact Us</Link>
+          </Button>
         </div>
       </section>
 
@@ -40,10 +37,12 @@ export default async function IndexPage({
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-            {dict.marketing.features}
+            Services
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            {dict.marketing.sub_features}
+            Streamline your business with our services, from website design to
+            social media management, We offer a wide range of services to help
+            you grow your business.
           </p>
         </div>
         <div>
@@ -122,38 +121,6 @@ export default async function IndexPage({
               </div>
             </div>
           </div>
-          {/* <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="h-12 w-12 fill-current"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <div className="space-y-2">
-                <h3 className="font-bold">Authentication</h3>
-                <p className="text-sm text-muted-foreground">
-                  Authentication using NextAuth.js and middlewares.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z" />
-              </svg>
-              <div className="space-y-2">
-                <h3 className="font-bold">Multiple Themes</h3>
-                <p className="text-sm text-muted-foreground">
-                  Free and paid subscriptions using Stripe.
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
         {/* <div className="mx-auto text-center md:max-w-[58rem]">
           <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
@@ -167,13 +134,12 @@ export default async function IndexPage({
         className="flex w-full flex-col gap-16 py-8 md:py-8"
       >
         <PricingCards
-          // userId={user?.id}
-          // subscriptionPlan={subscriptionPlan}
-          dict={dict.price}
-          params={{ lang }}
+        // userId={user?.id}
+        // subscriptionPlan={subscriptionPlan}
+        // dict={dict.price}
         />
         <hr className="container" />
-        <PricingFaq params={{ lang }} dict={dict.price} />
+        {/* <PricingFaq dict={dict.price} /> */}
       </section>
       <section
         id="company"
@@ -182,12 +148,6 @@ export default async function IndexPage({
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <InfiniteMovingCardss />
         </div>
-      </section>
-      <section
-        id="Globes"
-        className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-12"
-      >
-        {/*<Globes />*/}
       </section>
     </>
   );

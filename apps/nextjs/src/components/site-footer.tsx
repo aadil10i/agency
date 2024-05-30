@@ -15,7 +15,7 @@ export function SiteFooter({ className }: { className?: string }) {
             Copyright © 2024 Hata Media Group LTD. All rights reserved.
           </p>
         </div>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 text-center text-sm leading-loose md:text-left">
           +971 544437735 hatamedia@gmail.com
           <ModeToggle />
         </div>

@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import type { User } from "next-auth";
-
 import { Button } from "@saasfly/ui/button";
 
 import useScroll from "~/hooks/use-scroll";
@@ -10,22 +7,13 @@ import type { MainNavItem } from "~/types";
 import { MainNav } from "./main-nav";
 
 interface NavBarProps {
-  user: Pick<User, "name" | "image" | "email"> | undefined;
   items?: MainNavItem[];
   children?: React.ReactNode;
   rightElements?: React.ReactNode;
   scroll?: boolean;
-  params: {
-    lang: string;
-  };
 }
 
-export function NavBar({
-  items,
-  children,
-  scroll = false,
-  params: { lang },
-}: NavBarProps) {
+export function NavBar({ items, children, scroll = false }: NavBarProps) {
   const scrolled = useScroll(50);
   return (
     <header
@@ -34,9 +22,7 @@ export function NavBar({
       }`}
     >
       <div className="container flex h-16 items-center justify-between py-4">
-        <MainNav items={items} params={{ lang: `${lang}` }}>
-          {children}
-        </MainNav>
+        <MainNav items={items}>{children}</MainNav>
         <Button className="px-3" variant="default" size="sm">
           Contact
         </Button>
