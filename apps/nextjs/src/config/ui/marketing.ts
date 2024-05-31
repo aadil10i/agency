@@ -11,7 +11,7 @@ const mainNavItems = [
     href: `/pricing`,
   },
   {
-    title: "FAQ", // Replace with your actual English title
+    title: "Faq", // Replace with your actual English title
     href: `/faq`,
   },
 ];
