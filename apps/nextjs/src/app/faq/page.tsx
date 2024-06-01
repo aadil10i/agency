@@ -1,25 +1,15 @@
 import { PricingFaq } from "~/components/price/pricing-faq";
-import type { Locale } from "~/config/i18n-config";
-import { getDictionary } from "~/lib/get-dictionary";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Pricing",
+  title: "Faq",
 };
 
-export default async function FaqPage({
-  params: { lang },
-}: {
-  params: {
-    lang: Locale;
-  };
-}) {
-  const dict = await getDictionary(lang);
-
+export default function FaqPage() {
   return (
-    <div className="flex w-full flex-col gap-16 py-8 md:py-8">
-      <PricingFaq params={{ lang }} dict={dict.price} />
+    <div className="h-34 min-h-screen md:py-8">
+      <PricingFaq />
     </div>
   );
 }

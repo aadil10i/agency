@@ -26,7 +26,7 @@ export default function IndexPage() {
           <TextGenerateEffects />
 
           <Button>
-            <Link href={"/en/contact"}>Contact Us</Link>
+            <Link href={"/contact"}>Contact Us</Link>
           </Button>
         </div>
       </section>

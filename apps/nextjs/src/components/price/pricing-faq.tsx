@@ -17,7 +17,7 @@ export function PricingFaq() {
         <p className="text-md text-muted-foreground">
           <Balancer>
             Explore our comprehensive FAQ to find quick answers to common
-            inquiries. If you need further assistance, don&apos;t hesitate to
+            inquiries. If you need further assistance, don&apost hesitate to
             contact us for personalized help.
           </Balancer>
         </p>

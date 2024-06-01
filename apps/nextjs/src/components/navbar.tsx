@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Button } from "@saasfly/ui/button";
 
 import useScroll from "~/hooks/use-scroll";
@@ -24,7 +26,7 @@ export function NavBar({ items, children, scroll = false }: NavBarProps) {
       <div className="container flex h-16 items-center justify-between py-4">
         <MainNav items={items}>{children}</MainNav>
         <Button className="px-3" variant="default" size="sm">
-          Contact
+          <Link href={"/contact"}>Contact</Link>
         </Button>
       </div>
     </header>
