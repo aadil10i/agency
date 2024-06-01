@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function FaqPage() {
   return (
-    <div className="h-34 min-h-screen md:py-8">
+    <div className="min-h-screen md:py-8">
       <PricingFaq />
     </div>
   );

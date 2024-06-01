@@ -1,3 +1,7 @@
+import { Button } from "@saasfly/ui/button";
+import { Card, CardContent } from "@saasfly/ui/card";
+import { Input } from "@saasfly/ui/input";
+import { Label } from "@saasfly/ui/label";
 import {
   Select,
   SelectContent,
@@ -6,18 +10,12 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@saasfly/ui/select";
+import { Textarea } from "@saasfly/ui/text-area";
 
-import { Button } from "@saasfly/ui/button";
-// import { Card, CardContent } from "@/components/ui/card";
-import { Card, CardContent } from "@saasfly/ui/card";
-// import { Input } from "@/components/ui/input";
-import { Input } from "@saasfly/ui/input";
-import { Label } from "@saasfly/ui/label";
-
-export default function Component() {
+export default function ContactForm() {
   return (
-    <div className="flex h-screen items-center justify-center bg-green-500">
+    <div className="flex h-screen items-center justify-center">
       <Card>
         <CardContent>
           <div className="space-y-8">
@@ -64,11 +62,16 @@ export default function Component() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
+                {/* <textarea
+                  className="min-h-[100px]"
+                  id="message"
+                  placeholder="Enter your message"
+                /> */}
                 <Textarea
                   className="min-h-[100px]"
                   id="message"
                   placeholder="Enter your message"
-                />
+                ></Textarea>
               </div>
               <Button className="bg-gray-800 text-white" type="submit">
                 Send message

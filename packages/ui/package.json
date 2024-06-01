@@ -124,6 +124,7 @@
     "./infinite-moving-cards": "./src/infinite-moving-cards.tsx",
     "./card-hover-effect": "./src/card-hover-effect.tsx",
     "./sparkles": "./src/sparkles.tsx",
-    "./globe": "./src/globe.tsx"
+    "./globe": "./src/globe.tsx",
+    "./text-area": "./src/text-area.tsx"
   }
 }
