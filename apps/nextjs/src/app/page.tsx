@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@saasfly/ui/button";
+import * as Icons from "@saasfly/ui/icons";
 
 import { InfiniteMovingCardss } from "~/app/infiniteMovingCards";
 import { HoverEffects } from "~/components/card-hover-effect";
@@ -47,6 +49,146 @@ export default function IndexPage() {
         </div>
         <div>
           <HoverEffects />
+        </div>
+      </section>
+
+      <section
+        id="showcase"
+        className="container bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-12"
+      >
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+            Our Work
+          </h2>
+          <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+            Explore some of our past projects
+          </p>
+        </div>
+        <div className="mt-12 flex flex-row justify-center gap-0">
+          <div className="flex max-w-[58rem] flex-col space-y-4">
+            <h2 className="text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+              KAYWO
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Website design for interior design and architectural furniture
+              company.
+            </p>
+            <div className="flex h-full flex-col justify-between gap-16">
+              <ul className="space-y-4 text-left text-lg font-medium leading-normal">
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>WordPress Website Design</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>CRM integration with ZOHO CRM</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Woo commerce integration for online shop with stripe</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Content writing & on-page SEO</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Social Media Integration</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <Image
+            className=""
+            src="/images/templates/furnhome2.png"
+            alt="furniture-pic"
+            width={500}
+            height={500}
+          ></Image>
+        </div>
+
+        <div className="mt-24 flex flex-row-reverse justify-center gap-48">
+          <div className="flex max-w-[58rem] flex-col space-y-4">
+            <h2 className="text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+              RUBICK
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Website design for mens barbershop company.
+            </p>
+            <div className="flex h-full flex-col justify-between">
+              <ul className="space-y-4 text-left text-lg font-medium leading-normal">
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>WordPress Website Design</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Online Booking</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Content writing and on-page SEO</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Social media integration</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Location integration</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <Image
+            src="/images/templates/contact.jpg"
+            alt="barber-pic"
+            width={500}
+            height={500}
+          ></Image>
+        </div>
+
+        <div className="mt-12 flex flex-row justify-center gap-0">
+          <div className="flex max-w-[58rem] flex-col space-y-4">
+            <h2 className="text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+              KAYWO
+            </h2>
+            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+              Website design for interior design and architectural furniture
+              company.
+            </p>
+            <div className="flex h-full flex-col justify-between gap-16">
+              <ul className="space-y-4 text-left text-lg font-medium leading-normal">
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>WordPress Website Design</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>CRM integration with ZOHO CRM</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Woo commerce integration for online shop with stripe</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Content writing & on-page SEO</p>
+                </li>
+                <li className="flex items-start">
+                  <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
+                  <p>Social Media Integration</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <Image
+            className=""
+            src="/images/templates/global-kit-styles.jpg"
+            alt="furniture-pic"
+            width={500}
+            height={500}
+          ></Image>
         </div>
       </section>
 
@@ -139,7 +281,6 @@ export default function IndexPage() {
         // dict={dict.price}
         />
         <hr className="container" />
-        {/* <PricingFaq dict={dict.price} /> */}
       </section>
       <section
         id="company"
