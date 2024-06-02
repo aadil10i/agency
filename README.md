@@ -2,14 +2,18 @@ Todo
 
 - [x] fix landing text and background
 - [x] add book a call button in landing
-- [ ] Create contact Page
+- [x] Create contact Page
+- [ ] include email receiving from contact
+- [ ] include stipe payment button
+- [ ] include 6th service
 - [x] add number in footer and company info (later)
 - [ ] Showcase
+- [ ] logo
 - [x] Fix companis
 - [x] Make FAQ Own route
 - [x] fix pricing
   - [x] section in home page
-  - [x] text content
+  - [ ] text content
   - [x] auth
 - [x] remove blog
 - [x] remove auth

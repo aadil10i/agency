@@ -15,8 +15,8 @@ import { Textarea } from "@saasfly/ui/text-area";
 
 export default function ContactForm() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Card>
+    <div className="flex h-full items-center justify-center">
+      <Card className="p-8">
         <CardContent>
           <div className="space-y-8">
             <div className="space-y-2">
@@ -42,19 +42,33 @@ export default function ContactForm() {
                 <Input id="email" placeholder="Enter your email" type="email" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="pronoun">Pronoun</Label>
+                <Label htmlFor="phone">Phone</Label>
+                <Input id="phone" placeholder="Enter your Phone Number" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="company-name">Company Name</Label>
+                <Input
+                  id="company-name"
+                  placeholder="Enter your company name"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="pronoun">Services You Are Interested in</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select your pronoun" />
+                    <SelectValue placeholder="" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Pronouns</SelectLabel>
-                      <SelectItem value="he/him">He/Him</SelectItem>
-                      <SelectItem value="she/her">She/Her</SelectItem>
-                      <SelectItem value="they/them">They/Them</SelectItem>
-                      <SelectItem value="prefer not to say">
-                        Prefer not to say
+                      <SelectLabel>Services</SelectLabel>
+                      <SelectItem value="website-development">
+                        Website Development
+                      </SelectItem>
+                      <SelectItem value="social-media">
+                        Social Media Marketing
+                      </SelectItem>
+                      <SelectItem value="Both-Services">
+                        Both Services
                       </SelectItem>
                     </SelectGroup>
                   </SelectContent>
@@ -73,9 +87,7 @@ export default function ContactForm() {
                   placeholder="Enter your message"
                 ></Textarea>
               </div>
-              <Button className="bg-gray-800 text-white" type="submit">
-                Send message
-              </Button>
+              <Button type="submit">Send message</Button>
             </div>
           </div>
         </CardContent>
