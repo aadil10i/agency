@@ -7,7 +7,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@saasfly/ui/select";
@@ -29,28 +28,58 @@ export default function ContactForm() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="first-name">First name</Label>
+                  <Label htmlFor="first-name">First name *</Label>
                   <Input id="first-name" placeholder="Enter your first name" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="last-name">Last name</Label>
+                  <Label htmlFor="last-name">Last name *</Label>
                   <Input id="last-name" placeholder="Enter your last name" />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Email *</Label>
                 <Input id="email" placeholder="Enter your email" type="email" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone</Label>
+                <Label htmlFor="phone">Phone *</Label>
                 <Input id="phone" placeholder="Enter your Phone Number" />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="company-name">Company Name</Label>
-                <Input
-                  id="company-name"
-                  placeholder="Enter your company name"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="company-name">Company Name</Label>
+                  <Input
+                    id="company-name"
+                    placeholder="Enter your company name"
+                  />
+                </div>
+                {/* <div className="space-y-2">
+                  <Label htmlFor="monthly-budget">Monthly Budget *</Label>
+                  <Input
+                    id="monthly-budget"
+                    placeholder="Enter your monthly budget"
+                  />
+                </div> */}
+                <div className="space-y-2">
+                  <Label>Monthly Budget *</Label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value="website-development">
+                          USD 1,000 - 2,000
+                        </SelectItem>
+                        <SelectItem value="social-media">
+                          USD 2,000 - 3,000
+                        </SelectItem>
+                        <SelectItem value="Both-Services">
+                          USD 3,000+
+                        </SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="pronoun">Services You Are Interested in</Label>
@@ -60,7 +89,6 @@ export default function ContactForm() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Services</SelectLabel>
                       <SelectItem value="website-development">
                         Website Development
                       </SelectItem>
