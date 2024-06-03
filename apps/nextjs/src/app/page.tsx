@@ -148,14 +148,13 @@ export default function IndexPage() {
           ></Image>
         </div>
 
-        <div className="mt-12 flex flex-row justify-center gap-0">
+        <div className="mt-24 flex flex-row justify-center gap-0">
           <div className="flex max-w-[58rem] flex-col space-y-4">
             <h2 className="text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-              KAYWO
+              CANTIQ
             </h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              Website design for interior design and architectural furniture
-              company.
+              Website design for a beauty design company.
             </p>
             <div className="flex h-full flex-col justify-between gap-16">
               <ul className="space-y-4 text-left text-lg font-medium leading-normal">
@@ -169,11 +168,11 @@ export default function IndexPage() {
                 </li>
                 <li className="flex items-start">
                   <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
-                  <p>Woo commerce integration for online shop with stripe</p>
+                  <p>Online Appointment Booking</p>
                 </li>
                 <li className="flex items-start">
                   <Icons.Check className="mr-3 h-5 w-5 shrink-0" />
-                  <p>Content writing & on-page SEO</p>
+                  <p>Content writing & initial SEO</p>
                 </li>
                 <li className="flex items-start">
                   <Icons.Check className="mr-3 h-5 w-5 shrink-0" />

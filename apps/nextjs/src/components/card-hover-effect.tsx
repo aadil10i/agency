@@ -124,10 +124,27 @@ export const projects = [
     ),
   },
   {
-    title: "Social Media",
+    title: "SEO",
     description:
-      "We offer social media management, integration and ad creation services. We can help you grow your social media presence and reach new customers.",
+      "Harness the power of our expert search engine optimization strategies to boost your online visibility and drive targeted traffic to your website, ensuring you stay ahead of the competition.",
     link: "/",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-search"
+      >
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.3-4.3" />
+      </svg>
+    ),
   },
 ];
 export function HoverEffects() {

@@ -5,15 +5,15 @@ Todo
 - [x] Create contact Page
 - [ ] include email receiving from contact
 - [ ] include stipe payment button
-- [ ] include 6th service
+- [x] include 6th service
 - [x] add number in footer and company info (later)
-- [ ] Showcase
+- [x] Showcase
 - [ ] logo
 - [x] Fix companis
 - [x] Make FAQ Own route
 - [x] fix pricing
   - [x] section in home page
-  - [ ] text content
+  - [x] text content
   - [x] auth
 - [x] remove blog
 - [x] remove auth
