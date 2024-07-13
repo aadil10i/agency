@@ -189,7 +189,7 @@ export function PricingCards({ subscriptionPlan }: PricingCardsProps) {
             ),
           )}
         </div>
-
+{/* 
         <p className="mt-3 text-center text-base text-muted-foreground">
           <Balancer>
             Email{" "}
@@ -205,7 +205,7 @@ export function PricingCards({ subscriptionPlan }: PricingCardsProps) {
               You can test the subscriptions and will not be charged.
             </strong>
           </Balancer>
-        </p>
+        </p> */}
       </section>
     </>
   );

@@ -8,7 +8,7 @@ Todo
 - [x] include 6th service
 - [x] add number in footer and company info (later)
 - [x] Showcase
-- [ ] logo
+- [x] logo
 - [x] Fix companis
 - [x] Make FAQ Own route
 - [x] fix pricing
