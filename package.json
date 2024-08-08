@@ -13,7 +13,6 @@
     "lint": "turbo lint -- --quiet -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' ",
     "typecheck": "turbo typecheck",
-    "postinstall": "bun run check-deps",
     "gen": "turbo gen --config 'turbo/generators/config.ts'",
     "compile-tw-config": "tsc --noEmitOnError tooling/tailwind-config/index.ts --outDir  ./",
     "tailwind-config-viewer": " tailwind-config-viewer -c ./index.js -o -p 3333"
