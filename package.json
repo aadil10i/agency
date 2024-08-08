@@ -2,7 +2,7 @@
   "name": "nextjs-template",
   "private": true,
   "scripts": {
-    "build": "next build ",
+    "build": "next build",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "next clean",
     "db:push": "cd ./packages/db/ && bun db:push",

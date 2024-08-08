@@ -57,5 +57,7 @@
   },
   "eslintConfig": {
     "root": true
-  }
+  },
+
+  "packageManager": "bun@1.1.8"
 }
