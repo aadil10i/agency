@@ -20,9 +20,6 @@ export const env = createEnv({
     NEXT_PUBLIC_POSTHOG_HOST: z.string().optional(),
   },
   runtimeEnv: {
-    STRIPE_API_KEY: process.env.STRIPE_API_KEY,
-    STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_STRIPE_PRO_PRODUCT_ID:
       process.env.NEXT_PUBLIC_STRIPE_PRO_PRODUCT_ID,
     NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PRICE_ID:
