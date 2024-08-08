@@ -31,10 +31,6 @@
     "node": ">=18"
   },
   "prettier": "@saasfly/prettier-config",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "packageManager": "bun@1.1.8",
   "dependencies": {}
 }

@@ -14,9 +14,6 @@
   "dependencies": {
     "@hookform/resolvers": "3.3.4",
     "@next/mdx": "14.2.3",
-    "@saasfly/api": "workspace:*",
-    "@saasfly/db": "workspace:*",
-    "@saasfly/stripe": "workspace:*",
     "@t3-oss/env-nextjs": "0.8.0",
     "@tanstack/react-query": "5.36.0",
     "@trpc/client": "next",
@@ -38,10 +35,6 @@
     "posthog-js": "1.105.0"
   },
   "devDependencies": {
-    "@saasfly/eslint-config": "workspace:*",
-    "@saasfly/prettier-config": "workspace:*",
-    "@saasfly/tailwind-config": "workspace:*",
-    "@saasfly/typescript-config": "workspace:*",
     "@types/react": "18.3.2",
     "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.17",
@@ -63,12 +56,7 @@
     "@next-devtools/core": "0.2.0"
   },
   "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@saasfly/eslint-config/base",
-      "@saasfly/eslint-config/nextjs",
-      "@saasfly/eslint-config/react"
-    ]
+    "root": true
   },
   "prettier": "@saasfly/prettier-config"
 }
